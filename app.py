@@ -24,8 +24,8 @@ def prediction():
         print(res)
         conn = sqlite3.connect('cropdata.db')
         cur = conn.cursor()
-        cur.execute(''' INSERT INTO CROP VALUES ({nito},{phos},{kp},
-                    {temp},{hum},{ph},{frain},'{res[0]}')''')
+        cur.execute(f''' INSERT INTO CROP VALUES ({nitro},{phos},{kp},
+                    {temp},{hum},{ph},{rain},'{res[0]}')''')
         conn.commit()
         return render_template("result.html",res=res)
     
